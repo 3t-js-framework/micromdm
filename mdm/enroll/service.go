@@ -42,7 +42,7 @@ func NewService(topic TopicProvider, sub pubsub.Subscriber, scepURL, scepChallen
 	}
 
 	if scepSubject == "" {
-		scepSubject = "/O=MicroMDM/CN=MicroMDM Identity (%ComputerName%)"
+		scepSubject = "/O=AIA (VIETNAM)/CN=MDM_ AIA (VIETNAM) LIFE INSURANCE CO., LTD"
 	}
 
 	subjectElements := strings.Split(scepSubject, "/")
@@ -166,8 +166,8 @@ const perUserConnections = "com.apple.mdm.per-user-connections"
 func (svc *service) MakeEnrollmentProfile() (Profile, error) {
 	profile := NewProfile()
 	profile.PayloadIdentifier = EnrollmentProfileId
-	profile.PayloadOrganization = "MicroMDM"
-	profile.PayloadDisplayName = "Enrollment Profile"
+	profile.PayloadOrganization = "AIA (VIETNAM)"
+	profile.PayloadDisplayName = "MDM_ AIA (VIETNAM) LIFE INSURANCE CO., LTD"
 	profile.PayloadDescription = "The server may alter your settings"
 	profile.PayloadScope = "System"
 
