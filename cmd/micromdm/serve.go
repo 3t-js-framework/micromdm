@@ -52,7 +52,7 @@ const homePage = `<!doctype html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>MicroMDM</title>
+	<title>AIA MicroMDM</title>
 	<style>
 		body {
 			font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -60,7 +60,7 @@ const homePage = `<!doctype html>
 	</style>
 </head>
 <body>
-	<h3>Welcome to MicroMDM!</h3>
+	<h3>Welcome to AIA MicroMDM!</h3>
 	<p><a href="mdm/enroll">Enroll a device</a></p>
 </body>
 </html>

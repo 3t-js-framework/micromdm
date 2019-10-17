@@ -167,7 +167,7 @@ func (svc *service) MakeEnrollmentProfile() (Profile, error) {
 	profile := NewProfile()
 	profile.PayloadIdentifier = EnrollmentProfileId
 	profile.PayloadOrganization = "AIA (VIETNAM)"
-	profile.PayloadDisplayName = "Enrollment Profile"
+	profile.PayloadDisplayName = "AIA MDM Enrollment Profile"
 	profile.PayloadDescription = "The server may alter your settings"
 	profile.PayloadScope = "System"
 
@@ -225,8 +225,8 @@ func (svc *service) MakeEnrollmentProfile() (Profile, error) {
 	// Client needs to trust us at this point if we are using a self signed certificate.
 	if len(svc.TLSCert) > 0 {
 		tlsPayload := NewPayload("com.apple.security.pem")
-		tlsPayload.PayloadDisplayName = "Self-signed TLS certificate for MicroMDM"
-		tlsPayload.PayloadDescription = "Installs the TLS certificate for MicroMDM"
+		tlsPayload.PayloadDisplayName = "Self-signed TLS certificate for AIA MicroMDM"
+		tlsPayload.PayloadDescription = "Installs the TLS certificate for AIA MicroMDM"
 		tlsPayload.PayloadIdentifier = EnrollmentProfileId + ".cert.selfsigned"
 		tlsPayload.PayloadContent = svc.TLSCert
 
@@ -246,7 +246,7 @@ func (svc *service) OTAEnroll(ctx context.Context) (profile.Mobileconfig, error)
 func (svc *service) MakeOTAEnrollPayload() (Payload, error) {
 	payload := NewPayload("Profile Service")
 	payload.PayloadIdentifier = OTAProfileId
-	payload.PayloadDisplayName = "MicroMDM Profile Service"
+	payload.PayloadDisplayName = "AIA MicroMDM Profile Service"
 	payload.PayloadDescription = "Profile Service enrollment"
 	payload.PayloadOrganization = "AIA (VIETNAM)"
 	payload.PayloadContent = ProfileServicePayload{
