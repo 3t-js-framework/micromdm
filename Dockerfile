@@ -12,9 +12,9 @@ RUN make deps
 RUN make
 
 
-FROM alpine:latest
+FROM ubuntu:18.04
 
-RUN apk --update add ca-certificates
+RUN apt-get --update add ca-certificates
 
 COPY --from=builder /go/src/github.com/micromdm/micromdm/build/linux/micromdm /usr/bin/
 COPY --from=builder /go/src/github.com/micromdm/micromdm/build/linux/mdmctl /usr/bin/
