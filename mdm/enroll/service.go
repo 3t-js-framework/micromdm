@@ -42,7 +42,7 @@ func NewService(topic TopicProvider, sub pubsub.Subscriber, scepURL, scepChallen
 	}
 
 	if scepSubject == "" {
-		scepSubject = "/O=AIA (VIETNAM)/CN=MDM_ AIA (VIETNAM) LIFE INSURANCE CO., LTD"
+		scepSubject = "/O=AIA (VIETNAM)/CN=AIA (VIETNAM) LIFE INSURANCE CO., LTD"
 	}
 
 	subjectElements := strings.Split(scepSubject, "/")
@@ -166,14 +166,14 @@ const perUserConnections = "com.apple.mdm.per-user-connections"
 func (svc *service) MakeEnrollmentProfile() (Profile, error) {
 	profile := NewProfile()
 	profile.PayloadIdentifier = EnrollmentProfileId
-	profile.PayloadOrganization = "MicroMDM"
+	profile.PayloadOrganization = "AIA (VIETNAM)"
 	profile.PayloadDisplayName = "Enrollment Profile"
 	profile.PayloadDescription = "The server may alter your settings"
 	profile.PayloadScope = "System"
 
 	mdmPayload := NewPayload("com.apple.mdm")
 	mdmPayload.PayloadDescription = "Enrolls with the MDM server"
-	mdmPayload.PayloadOrganization = "MicroMDM"
+	mdmPayload.PayloadOrganization = "AIA (VIETNAM)"
 	mdmPayload.PayloadIdentifier = EnrollmentProfileId + ".mdm"
 	mdmPayload.PayloadScope = "System"
 
@@ -212,7 +212,7 @@ func (svc *service) MakeEnrollmentProfile() (Profile, error) {
 		scepPayload.PayloadDescription = "Configures SCEP"
 		scepPayload.PayloadDisplayName = "SCEP"
 		scepPayload.PayloadIdentifier = EnrollmentProfileId + ".scep"
-		scepPayload.PayloadOrganization = "MicroMDM"
+		scepPayload.PayloadOrganization = "AIA (VIETNAM)"
 		scepPayload.PayloadContent = scepContent
 		scepPayload.PayloadScope = "System"
 
@@ -248,7 +248,7 @@ func (svc *service) MakeOTAEnrollPayload() (Payload, error) {
 	payload.PayloadIdentifier = OTAProfileId
 	payload.PayloadDisplayName = "MicroMDM Profile Service"
 	payload.PayloadDescription = "Profile Service enrollment"
-	payload.PayloadOrganization = "MicroMDM"
+	payload.PayloadOrganization = "AIA (VIETNAM)"
 	payload.PayloadContent = ProfileServicePayload{
 		URL:              svc.URL + "/ota/phase23",
 		Challenge:        "",
@@ -267,7 +267,7 @@ func (svc *service) OTAPhase2(ctx context.Context) (profile.Mobileconfig, error)
 func (svc *service) MakeOTAPhase2Profile() (Profile, error) {
 	profile := NewProfile()
 	profile.PayloadIdentifier = OTAProfileId + ".phase2"
-	profile.PayloadOrganization = "MicroMDM"
+	profile.PayloadOrganization = "AIA (VIETNAM)"
 	profile.PayloadDisplayName = "OTA Phase 2"
 	profile.PayloadDescription = "The server may alter your settings"
 	profile.PayloadScope = "System"
@@ -289,7 +289,7 @@ func (svc *service) MakeOTAPhase2Profile() (Profile, error) {
 	scepPayload.PayloadDescription = "Configures SCEP"
 	scepPayload.PayloadDisplayName = "SCEP"
 	scepPayload.PayloadIdentifier = OTAProfileId + ".phase2.scep"
-	scepPayload.PayloadOrganization = "MicroMDM"
+	scepPayload.PayloadOrganization = "AIA (VIETNAM)"
 	scepPayload.PayloadContent = scepContent
 	scepPayload.PayloadScope = "System"
 
