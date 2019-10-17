@@ -12,7 +12,7 @@ RUN make deps
 RUN make
 
 
-FROM alpine:latest
+FROM ubuntu:18.04
 
 RUN apk --update add ca-certificates
 
