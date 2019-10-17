@@ -166,8 +166,8 @@ const perUserConnections = "com.apple.mdm.per-user-connections"
 func (svc *service) MakeEnrollmentProfile() (Profile, error) {
 	profile := NewProfile()
 	profile.PayloadIdentifier = EnrollmentProfileId
-	profile.PayloadOrganization = "AIA (VIETNAM)"
-	profile.PayloadDisplayName = "MDM_ AIA (VIETNAM) LIFE INSURANCE CO., LTD"
+	profile.PayloadOrganization = "MicroMDM"
+	profile.PayloadDisplayName = "Enrollment Profile"
 	profile.PayloadDescription = "The server may alter your settings"
 	profile.PayloadScope = "System"
 
